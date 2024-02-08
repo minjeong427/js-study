@@ -85,19 +85,19 @@
     console.log(names);
 
     // 연습 5: 서울에 사는 거래자의 모든 거래액의 총합 출력.
-  /*
-    let total = 0;
-    traders
-      .filter(trs => trs.trader.city === '서울')
-      // .forEach(trs => total += trs.value);
-      .map(trs => trs.value)
-      .forEach(val => total += val);
-  */
+    /*
+      let total = 0;
+      traders
+        .filter(trs => trs.trader.city === '서울')
+        // .forEach(trs => total += trs.value);
+        .map(trs => trs.value)
+        .forEach(val => total += val);
+    */
 
-  /* reduce 함수: 배열을 반복해서 각 요소에 콜백함수를 적용한 결과를 누적하는 함수
-     array.reduce((누적값, 배열 요소) => 반복해서 실행할 내용(누적 연산), acc의 초기값);
-  */
-    
+    /* reduce 함수: 배열을 반복해서 각 요소에 콜백함수를 적용한 결과를 누적하는 함수
+       array.reduce((누적값, 배열 요소) => 반복해서 실행할 내용(누적 연산), acc의 초기값);
+    */
+
     const total = traders
       .filter(trs => trs.trader.city === '서울')
       .reduce((acc, curr) => acc + curr.value, 0)
