@@ -14,6 +14,12 @@ const calculate = (type) => {
   // 계산 전 값을 기억
   const originalResult = currentResult;
   const enteredNumber = getUserNumberInput();
+  console.log(enteredNumber);
+
+  if(!enteredNumber && enteredNumber !== 0) {
+    alert('문제 발생!');
+    return;
+  }
 
   let mark;
   if (type === 'ADD') {
@@ -26,6 +32,10 @@ const calculate = (type) => {
     mark = 'x';
     currentResult *= enteredNumber;
   } else {
+    if(enteredNumber === 0) {
+      alert('0으로 나눌 수 없습니다.');
+      return;
+    }
     mark = '÷';
     currentResult /= enteredNumber;
   }
